@@ -23,8 +23,8 @@ import blog.views as bv
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('blog/', include(('blog.urls', 'blog'), namespace='blog')),
-    path('blog2/', include(('blog2.urls', 'blog2'), namespace='blog2')),
+    #path('blog/', include(('blog.urls', 'blog'), namespace='blog')),
+    path('blog/', include(('blog2.urls', 'blog2'), namespace='blog2')),
     path('mdeditor/', include('mdeditor.urls')),
 ]
 
