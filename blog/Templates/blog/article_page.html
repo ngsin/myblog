@@ -1,0 +1,41 @@
+<!-- extends表明此页面继承自 base.html 文件 -->
+{% extends "base.html" %}
+{% load staticfiles %}
+
+<!-- 写入 base.html 中定义的 title -->
+{% block title %}
+    首页
+{% endblock title %}
+
+<!-- 写入 base.html 中定义的 content -->
+{% block content %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../static/md_css/monokai.css" type="text/css">
+</head>
+<body>
+
+
+<div class="container">
+  <div class="card-footer">
+    <h1 >{{ article.name }}</h1>
+  </div>
+    <br/>
+    <h3 class="col-12" >{{ article.content|safe }}</h3>
+    <br/><br/>
+
+    <div class="card-footer">
+        <a href="{% url 'blog:edit_page' article.id %}" class="btn btn-primary">修改文章</a>
+    </div>
+</div>
+
+
+</body>
+</html>
+
+{% endblock content %}
